@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin:0;
+        padding:0;
+        list-style: none;
+
+    }
+    .wrapper{
+        position: relative;
+        height:400px;
+        width:600px;
+        margin:0 auto;
+        margin-top:50px;
+        overflow: hidden;
+        border: 1px solid black;
+
+
+    }
+    .wrapper .box{
+        height:400px;
+        width: 3000px;
+        position: absolute;
+
+    }
+    .wrapper .box .item{
+        height:400px;
+        width:600px;
+        float:left;
+        
+    }
+    @keyframes move {
+        0%,20% {
+            margin-left: 0px;
+        }
+		25%,40%{		
+            margin-left: -600px;
+    	}
+		45%,60%{		
+            margin-left: -1200px;	
+        }
+		65%,80%{		
+            margin-left: -1800px;	
+        }
+		85%,100%{		
+            margin-left: -2400px;	
+        }
+
+    } 
+    
+    .box {
+        animation: move 5s ease-out infinite ;
+        
+    }
+    .index {
+        position: absolute;
+        text-align: center;
+        width:100%;
+        bottom:10px;
+        margin-left: 20px;
+        
+    }
+    .btn{
+        display: inline-block;
+        height: 5px;
+        width:20px;
+        background: #666;
+        cursor: pointer;
+       
+    }
+    .btn:hover,.box:hover{
+        /* background-color: aqua; */
+        animation: move;
+        animation-play-state: paused;
+    }
+
+    @keyframes ma1 {0%{margin-left:-3000px;}100%{margin-left:-0px;}	}
+	@keyframes ma2 {0%{margin-left:-2400px;}100%{margin-left:-1800px;}	}
+	@keyframes ma3 {100%{margin-left:-1200px;}	}
+	@keyframes ma4 {100%{margin-left:-600px;}	}
+	@keyframes ma5 {100%{margin-left:-3000px;}	}
+    
+    #btn1:hover ~ #pause{
+        animation: ma1 0.5s ease-out forwards;
+    }
+    
+		#btn2:hover ~ #pause{animation: ma2 .5s ease-out forwards;}
+		#btn3:hover ~ #pause{animation: ma3 .5s ease-out forwards;}
+		#btn4:hover ~ #pause{animation: ma4 .5s ease-out forwards;}
+		#btn5:hover ~ #pause{animation: ma5 .5s ease-out forwards;}
+    
+
+
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box" id="pause">
+            <img src="01.jpg" alt="" class="item">
+            <img src="02.jpg" alt="" class="item">
+            <img src="03.jpg" alt="" class="item">
+            <img src="04.jpg" alt="" class="item">
+            <img src="05.jpg" alt="" class="item">
+
+        </div>
+
+        
+        <div class="index">
+                <span class="btn" id="btn1"></span>
+                <span class="btn" id="btn2"></span>
+                <span class="btn" id="btn3"></span>
+                <span class="btn" id="btn4"></span>
+                <span class="btn" id="btn5"></span>
+        </div>
+        
+        
+
+        
+            
+
+        
+    </div>
+</body>
+</html>
